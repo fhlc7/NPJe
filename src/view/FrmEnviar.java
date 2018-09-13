@@ -105,6 +105,16 @@ public class FrmEnviar extends JDialog {
 		btnSelecionarArquivo.setMnemonic('s');
 		btnSelecionarArquivo.setBounds(660, 168, 130, 28);
 		contentPane.add(btnSelecionarArquivo);
+		
+		JButton button = new JButton("Voltar");
+		button.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				dispose();
+			}
+		});
+		button.setMnemonic('v');
+		button.setBounds(6, 6, 90, 28);
+		contentPane.add(button);
 	}
 	
 	private void initialize() {

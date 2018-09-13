@@ -63,6 +63,7 @@ public class FrmMenuPrincipal extends JFrame {
 	 * Create the frame.
 	 */
 	public FrmMenuPrincipal() {
+		setResizable(false);
 		addComponentListener(new ComponentAdapter() {
 			@Override
 			public void componentResized(ComponentEvent arg0) {

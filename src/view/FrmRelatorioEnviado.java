@@ -138,6 +138,16 @@ public class FrmRelatorioEnviado extends JDialog {
 			}
 		});
 		scrollPaneRelatorio.setViewportView(tableRelatorio);
+		
+		JButton btnVoltar = new JButton("Voltar");
+		btnVoltar.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				dispose();
+			}
+		});
+		btnVoltar.setMnemonic('v');
+		btnVoltar.setBounds(6, 6, 90, 28);
+		contentPane.add(btnVoltar);
 	}
 	
 	private void initialize() {
@@ -223,5 +233,4 @@ public class FrmRelatorioEnviado extends JDialog {
 		FHLC.baixarVisualizar(e.getNomeArquivo(), e.getArquivoOutput());
 		initialize();
 	}
-	
 }

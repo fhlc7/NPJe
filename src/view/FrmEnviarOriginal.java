@@ -179,6 +179,16 @@ public class FrmEnviarOriginal extends JDialog {
 		btnBaixarVisualizar.setMnemonic('b');
 		btnBaixarVisualizar.setBounds(660, 168, 130, 28);
 		contentPane.add(btnBaixarVisualizar);
+		
+		JButton button = new JButton("Voltar");
+		button.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				dispose();
+			}
+		});
+		button.setMnemonic('v');
+		button.setBounds(6, 6, 90, 28);
+		contentPane.add(button);
 	}
 	
 	private void initialize() {

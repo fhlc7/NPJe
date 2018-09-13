@@ -151,6 +151,16 @@ public class FrmBaixar extends JDialog {
 		txtId.setBackground(Color.WHITE);
 		txtId.setBounds(725, 109, 122, 28);
 		contentPane.add(txtId);
+		
+		JButton button = new JButton("Voltar");
+		button.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				dispose();
+			}
+		});
+		button.setMnemonic('v');
+		button.setBounds(6, 6, 90, 28);
+		contentPane.add(button);
 	}
 	
 	private void initialize() {
