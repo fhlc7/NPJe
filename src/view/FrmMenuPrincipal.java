@@ -84,18 +84,18 @@ public class FrmMenuPrincipal extends JFrame {
 		JMenuBar menuBar = new JMenuBar();
 		setJMenuBar(menuBar);
 		
-		JMenu mnRelatrio = new JMenu("Relat\u00F3rio");
+		JMenu mnRelatrio = new JMenu("Relat\u00F3rios");
 		mnRelatrio.setMnemonic('r');
 		menuBar.add(mnRelatrio);
 		
-		JMenuItem mntmBaixar = new JMenuItem("Baixar");
+		JMenuItem mntmBaixar = new JMenuItem("Baixar Modelo de Relat\u00F3rio");
 		mntmBaixar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				new FrmBaixar().setVisible(true);
 			}
 		});
 		
-		mntmOriginal = new JMenuItem("Original");
+		mntmOriginal = new JMenuItem("Disponibilizar Relat\u00F3rios");
 		mntmOriginal.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				new FrmEnviarOriginal().setVisible(true);
@@ -104,7 +104,7 @@ public class FrmMenuPrincipal extends JFrame {
 		mnRelatrio.add(mntmOriginal);
 		mnRelatrio.add(mntmBaixar);
 		
-		JMenuItem mntmEnviar = new JMenuItem("Enviar");
+		JMenuItem mntmEnviar = new JMenuItem("Enviar Relat\u00F3rio");
 		mntmEnviar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				new FrmEnviar().setVisible(true);
@@ -112,7 +112,7 @@ public class FrmMenuPrincipal extends JFrame {
 		});
 		mnRelatrio.add(mntmEnviar);
 		
-		mntmEnviados = new JMenuItem("Enviados");
+		mntmEnviados = new JMenuItem("Relat\u00F3rios Enviados");
 		mntmEnviados.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				new FrmRelatorioEnviado().setVisible(true);
@@ -120,11 +120,11 @@ public class FrmMenuPrincipal extends JFrame {
 		});
 		mnRelatrio.add(mntmEnviados);
 		
-		mnUsuario = new JMenu("Usu\u00E1rio");
+		mnUsuario = new JMenu("Gerenciamento");
 		mnUsuario.setMnemonic('u');
 		menuBar.add(mnUsuario);
 		
-		JMenuItem mntmGerenciar = new JMenuItem("Gerenciar");
+		JMenuItem mntmGerenciar = new JMenuItem("Cadastrar Estagi\u00E1rios");
 		mntmGerenciar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				new FrmUsuario().setVisible(true);

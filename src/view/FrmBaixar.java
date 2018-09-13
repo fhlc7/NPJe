@@ -101,14 +101,14 @@ public class FrmBaixar extends JDialog {
 		});
 		scrollPaneRelatorio.setViewportView(tableRelatorio);
 		
-		JButton btnBaixarVisualizar = new JButton("Baixar & Visualizar");
+		JButton btnBaixarVisualizar = new JButton("Baixar/Visualizar");
 		btnBaixarVisualizar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				baixarVisualizar();
 			}
 		});
 		btnBaixarVisualizar.setMnemonic('b');
-		btnBaixarVisualizar.setBounds(859, 109, 129, 68);
+		btnBaixarVisualizar.setBounds(859, 149, 129, 28);
 		contentPane.add(btnBaixarVisualizar);
 		
 		JLabel lblNomeDoArquivo = new JLabel("Nome do Arquivo:");
@@ -116,7 +116,7 @@ public class FrmBaixar extends JDialog {
 		contentPane.add(lblNomeDoArquivo);
 		
 		txtNomeDoArquivo = new JTextField();
-		txtNomeDoArquivo.setBackground(Color.CYAN);
+		txtNomeDoArquivo.setBackground(Color.WHITE);
 		txtNomeDoArquivo.setEditable(false);
 		txtNomeDoArquivo.setText("Nome do Arquivo");
 		txtNomeDoArquivo.setBounds(115, 109, 598, 28);
@@ -140,15 +140,15 @@ public class FrmBaixar extends JDialog {
 		txtPesquisar.setColumns(10);
 		
 		JLabel lblBaixarRelatrio = new JLabel("Baixar Relat\u00F3rio");
-		lblBaixarRelatrio.setFont(new Font("SansSerif", Font.PLAIN, 42));
-		lblBaixarRelatrio.setBounds(352, 23, 300, 54);
+		lblBaixarRelatrio.setFont(new Font("SansSerif", Font.PLAIN, 22));
+		lblBaixarRelatrio.setBounds(117, 58, 300, 54);
 		contentPane.add(lblBaixarRelatrio);
 		
 		txtId = new JTextField();
 		txtId.setText("id");
 		txtId.setEditable(false);
 		txtId.setColumns(10);
-		txtId.setBackground(Color.CYAN);
+		txtId.setBackground(Color.WHITE);
 		txtId.setBounds(725, 109, 122, 28);
 		contentPane.add(txtId);
 	}
@@ -212,7 +212,7 @@ public class FrmBaixar extends JDialog {
 	
 	private void baixarVisualizar() {
 		if (txtId.getText().isEmpty()) {
-			JOptionPane.showMessageDialog(null, "Nenhum relatório selecionado\n\nSelecione um Relatório");
+			JOptionPane.showMessageDialog(null, "Nenhum Relatório Selecionado");
 			initialize();
 			txtPesquisar.requestFocus();
 			return;

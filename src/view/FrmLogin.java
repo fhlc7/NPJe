@@ -66,17 +66,6 @@ public class FrmLogin extends JFrame {
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		
-		JButton btnEntrar = new JButton("Entrar");
-		btnEntrar.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent arg0) {
-				login();
-			}
-		});
-		btnEntrar.setFont(new Font("Calibri", Font.BOLD, 25));
-		btnEntrar.setMnemonic('e');
-		btnEntrar.setBounds(6, 177, 262, 64);
-		contentPane.add(btnEntrar);
-		
 		JPanel panel = new JPanel();
 		panel.setBorder(new EtchedBorder(EtchedBorder.LOWERED, null, null));
 		panel.setBounds(6, 49, 262, 116);
@@ -116,10 +105,21 @@ public class FrmLogin extends JFrame {
 		
 		JLabel lblLogin = new JLabel("Login");
 		lblLogin.setHorizontalAlignment(SwingConstants.CENTER);
-		lblLogin.setForeground(Color.BLUE);
+		lblLogin.setForeground(Color.DARK_GRAY);
 		lblLogin.setFont(new Font("Calibri", Font.BOLD | Font.ITALIC, 25));
 		lblLogin.setBounds(6, 6, 262, 31);
 		contentPane.add(lblLogin);
+		
+		JButton btnEntrar = new JButton("Entrar");
+		btnEntrar.setBounds(105, 179, 122, 31);
+		contentPane.add(btnEntrar);
+		btnEntrar.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				login();
+			}
+		});
+		btnEntrar.setFont(new Font("Calibri", Font.PLAIN, 22));
+		btnEntrar.setMnemonic('e');
 	}
 
 	private void login() {
@@ -141,7 +141,7 @@ public class FrmLogin extends JFrame {
 		usuario.setSenha(senha);
 		if(UsuarioControle.login(usuario)){
 			//existe
-			JOptionPane.showMessageDialog(null, "Seja Muito Bem Vindo " + usuario.getUsuario());
+			JOptionPane.showMessageDialog(null, "Seja Bem Vindo " + usuario.getUsuario());
 			FrmMenuPrincipal menu = new FrmMenuPrincipal();
 			menu.setVisible(true);
 			limpar();

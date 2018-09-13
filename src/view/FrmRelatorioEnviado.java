@@ -79,9 +79,9 @@ public class FrmRelatorioEnviado extends JDialog {
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		
-		JLabel lblRelatriosEnviados = new JLabel("Relat\u00F3rio(s) Enviado(s)");
-		lblRelatriosEnviados.setFont(new Font("SansSerif", Font.PLAIN, 42));
-		lblRelatriosEnviados.setBounds(286, 33, 429, 54);
+		JLabel lblRelatriosEnviados = new JLabel("Relat\u00F3rios Enviados");
+		lblRelatriosEnviados.setFont(new Font("SansSerif", Font.PLAIN, 22));
+		lblRelatriosEnviados.setBounds(115, 59, 429, 54);
 		contentPane.add(lblRelatriosEnviados);
 		
 		JLabel label = new JLabel("Nome do Arquivo:");
@@ -89,10 +89,9 @@ public class FrmRelatorioEnviado extends JDialog {
 		contentPane.add(label);
 		
 		txtNomeDoArquivo = new JTextField();
-		txtNomeDoArquivo.setText("Nome do Arquivo");
 		txtNomeDoArquivo.setEditable(false);
 		txtNomeDoArquivo.setColumns(10);
-		txtNomeDoArquivo.setBackground(Color.CYAN);
+		txtNomeDoArquivo.setBackground(Color.WHITE);
 		txtNomeDoArquivo.setBounds(115, 109, 732, 28);
 		contentPane.add(txtNomeDoArquivo);
 		
@@ -107,19 +106,18 @@ public class FrmRelatorioEnviado extends JDialog {
 				atualizarTabela();
 			}
 		});
-		txtPesquisar.setText("Pesquisar");
 		txtPesquisar.setColumns(10);
 		txtPesquisar.setBounds(115, 149, 732, 28);
 		contentPane.add(txtPesquisar);
 		
-		JButton btnBaixarVisualizar = new JButton("Baixar & Visualizar");
+		JButton btnBaixarVisualizar = new JButton("Baixar/Visualizar");
 		btnBaixarVisualizar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				baixarVisualizar();
 			}
 		});
 		btnBaixarVisualizar.setMnemonic('b');
-		btnBaixarVisualizar.setBounds(859, 109, 129, 68);
+		btnBaixarVisualizar.setBounds(859, 149, 129, 28);
 		contentPane.add(btnBaixarVisualizar);
 		
 		JScrollPane scrollPaneRelatorio = new JScrollPane();

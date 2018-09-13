@@ -63,7 +63,7 @@ public class FrmEnviar extends JDialog {
 		setResizable(false);
 		setTitle("Relat\u00F3rio(s)");
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
-		setSize(1000, 319);
+		setSize(1000, 700);
 		setLocationRelativeTo(null);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
@@ -71,15 +71,14 @@ public class FrmEnviar extends JDialog {
 		contentPane.setLayout(null);
 		
 		JLabel lblEnviarRelatrio = new JLabel("Enviar Relat\u00F3rio");
-		lblEnviarRelatrio.setFont(new Font("SansSerif", Font.PLAIN, 42));
-		lblEnviarRelatrio.setBounds(355, 33, 301, 54);
+		lblEnviarRelatrio.setFont(new Font("SansSerif", Font.PLAIN, 22));
+		lblEnviarRelatrio.setBounds(161, 72, 301, 54);
 		contentPane.add(lblEnviarRelatrio);
 		
 		txtNomeDoArquivo = new JTextField();
-		txtNomeDoArquivo.setText("Nome do Arquivo");
 		txtNomeDoArquivo.setEditable(false);
 		txtNomeDoArquivo.setColumns(10);
-		txtNomeDoArquivo.setBackground(Color.CYAN);
+		txtNomeDoArquivo.setBackground(Color.WHITE);
 		txtNomeDoArquivo.setBounds(161, 128, 771, 28);
 		contentPane.add(txtNomeDoArquivo);
 		

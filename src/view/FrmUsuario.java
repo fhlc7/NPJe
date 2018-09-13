@@ -111,9 +111,8 @@ public class FrmUsuario extends JFrame {
 		
 		txtId = new JTextField();
 		txtId.setBounds(108, 6, 122, 28);
-		txtId.setBackground(Color.CYAN);
+		txtId.setBackground(Color.WHITE);
 		txtId.setEditable(false);
-		txtId.setText("id");
 		txtId.setColumns(10);
 		
 		JLabel lblUsuario = new JLabel("Usu\u00E1rio:");
@@ -121,7 +120,6 @@ public class FrmUsuario extends JFrame {
 		
 		txtUsuario = new JTextField();
 		txtUsuario.setBounds(108, 40, 352, 28);
-		txtUsuario.setText("Usu\u00E1rio");
 		txtUsuario.setColumns(10);
 		
 		JLabel lblSenha = new JLabel("Senha:");
@@ -161,7 +159,6 @@ public class FrmUsuario extends JFrame {
 		panel_1.add(lblNomeCompleto);
 		
 		txtNomeCompleto = new JTextField();
-		txtNomeCompleto.setText("Nome Completo");
 		txtNomeCompleto.setBounds(578, 40, 307, 28);
 		panel_1.add(txtNomeCompleto);
 		txtNomeCompleto.setColumns(10);
@@ -171,7 +168,6 @@ public class FrmUsuario extends JFrame {
 		panel_1.add(lblMatrcula);
 		
 		txtMatricula = new JTextField();
-		txtMatricula.setText("Matricula");
 		txtMatricula.setBounds(578, 6, 307, 28);
 		panel_1.add(txtMatricula);
 		txtMatricula.setColumns(10);
@@ -181,7 +177,6 @@ public class FrmUsuario extends JFrame {
 		panel_1.add(lblEmail);
 		
 		txtEmail = new JTextField();
-		txtEmail.setText("Email");
 		txtEmail.setBounds(578, 74, 307, 28);
 		panel_1.add(txtEmail);
 		txtEmail.setColumns(10);
@@ -191,7 +186,6 @@ public class FrmUsuario extends JFrame {
 		panel_1.add(lblFone);
 		
 		txtFone = new JTextField();
-		txtFone.setText("Fone");
 		txtFone.setBounds(578, 107, 307, 28);
 		panel_1.add(txtFone);
 		txtFone.setColumns(10);
@@ -292,14 +286,14 @@ public class FrmUsuario extends JFrame {
 		button_2.setMnemonic('s');
 		panel_3.add(button_2);
 		
-		JButton button_3 = new JButton("Deletar");
-		button_3.addActionListener(new ActionListener() {
+		JButton btnExcluir = new JButton("Excluir");
+		btnExcluir.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				deletar();
 			}
 		});
-		button_3.setMnemonic('d');
-		panel_3.add(button_3);
+		btnExcluir.setMnemonic('d');
+		panel_3.add(btnExcluir);
 		
 		JButton button_4 = new JButton("Fechar");
 		button_4.addActionListener(new ActionListener() {

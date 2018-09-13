@@ -82,15 +82,14 @@ public class FrmEnviarOriginal extends JDialog {
 		contentPane.setLayout(null);
 		
 		JLabel lblEnviarRelatrioOriginal = new JLabel("Enviar Relat\u00F3rio Original");
-		lblEnviarRelatrioOriginal.setFont(new Font("SansSerif", Font.PLAIN, 42));
-		lblEnviarRelatrioOriginal.setBounds(268, 40, 459, 54);
+		lblEnviarRelatrioOriginal.setFont(new Font("SansSerif", Font.PLAIN, 22));
+		lblEnviarRelatrioOriginal.setBounds(161, 77, 459, 54);
 		contentPane.add(lblEnviarRelatrioOriginal);
 		
 		txtNomeDoArquivo = new JTextField();
-		txtNomeDoArquivo.setText("Nome do Arquivo");
 		txtNomeDoArquivo.setEditable(false);
 		txtNomeDoArquivo.setColumns(10);
-		txtNomeDoArquivo.setBackground(Color.CYAN);
+		txtNomeDoArquivo.setBackground(Color.WHITE);
 		txtNomeDoArquivo.setBounds(161, 128, 637, 28);
 		contentPane.add(txtNomeDoArquivo);
 		
@@ -144,26 +143,24 @@ public class FrmEnviarOriginal extends JDialog {
 				atualizarTabela();
 			}
 		});
-		txtPesquisar.setText("Pesquisar");
 		txtPesquisar.setBounds(161, 168, 203, 28);
 		contentPane.add(txtPesquisar);
 		txtPesquisar.setColumns(10);
 		
 		JLabel lblPesquisar = new JLabel("Pesquisar:");
-		lblPesquisar.setFont(new Font("SansSerif", Font.ITALIC, 12));
-		lblPesquisar.setBounds(91, 174, 58, 16);
+		lblPesquisar.setFont(new Font("SansSerif", Font.PLAIN, 12));
+		lblPesquisar.setBounds(89, 174, 60, 16);
 		contentPane.add(lblPesquisar);
 		
 		txtId = new JTextField();
 		txtId.setHorizontalAlignment(SwingConstants.CENTER);
-		txtId.setText("id");
 		txtId.setEditable(false);
 		txtId.setColumns(10);
-		txtId.setBackground(Color.CYAN);
+		txtId.setBackground(Color.WHITE);
 		txtId.setBounds(810, 128, 122, 28);
 		contentPane.add(txtId);
 		
-		JButton btnDeletar = new JButton("Deletar");
+		JButton btnDeletar = new JButton("Excluir");
 		btnDeletar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				deletar();
@@ -173,7 +170,7 @@ public class FrmEnviarOriginal extends JDialog {
 		btnDeletar.setBounds(802, 168, 130, 28);
 		contentPane.add(btnDeletar);
 		
-		JButton btnBaixarVisualizar = new JButton("Baixar & Visualizar");
+		JButton btnBaixarVisualizar = new JButton("Baixar/Visualizar");
 		btnBaixarVisualizar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				baixarVisualizar();
