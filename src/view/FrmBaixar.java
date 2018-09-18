@@ -29,6 +29,8 @@ import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+import javax.swing.ImageIcon;
+import java.awt.SystemColor;
 
 public class FrmBaixar extends JDialog {
 
@@ -83,7 +85,7 @@ public class FrmBaixar extends JDialog {
 		contentPane.setLayout(null);
 		
 		JScrollPane scrollPaneRelatorio = new JScrollPane();
-		scrollPaneRelatorio.setBounds(6, 189, 982, 477);
+		scrollPaneRelatorio.setBounds(55, 213, 880, 388);
 		contentPane.add(scrollPaneRelatorio);
 		
 		tableRelatorio = new JTable();
@@ -108,23 +110,27 @@ public class FrmBaixar extends JDialog {
 			}
 		});
 		btnBaixarVisualizar.setMnemonic('b');
-		btnBaixarVisualizar.setBounds(859, 149, 129, 28);
+		btnBaixarVisualizar.setBounds(813, 173, 122, 28);
 		contentPane.add(btnBaixarVisualizar);
 		
 		JLabel lblNomeDoArquivo = new JLabel("Nome do Arquivo:");
-		lblNomeDoArquivo.setBounds(6, 115, 97, 16);
+		lblNomeDoArquivo.setFont(new Font("SansSerif", Font.BOLD, 12));
+		lblNomeDoArquivo.setForeground(SystemColor.text);
+		lblNomeDoArquivo.setBounds(55, 139, 124, 16);
 		contentPane.add(lblNomeDoArquivo);
 		
 		txtNomeDoArquivo = new JTextField();
 		txtNomeDoArquivo.setBackground(Color.WHITE);
 		txtNomeDoArquivo.setEditable(false);
 		txtNomeDoArquivo.setText("Nome do Arquivo");
-		txtNomeDoArquivo.setBounds(115, 109, 598, 28);
+		txtNomeDoArquivo.setBounds(160, 133, 641, 28);
 		contentPane.add(txtNomeDoArquivo);
 		txtNomeDoArquivo.setColumns(10);
 		
 		JLabel lblPesquisar = new JLabel("Pesquisar:");
-		lblPesquisar.setBounds(43, 155, 60, 16);
+		lblPesquisar.setForeground(SystemColor.text);
+		lblPesquisar.setFont(new Font("SansSerif", Font.BOLD, 12));
+		lblPesquisar.setBounds(57, 179, 87, 16);
 		contentPane.add(lblPesquisar);
 		
 		txtPesquisar = new JTextField();
@@ -135,21 +141,16 @@ public class FrmBaixar extends JDialog {
 			}
 		});
 		txtPesquisar.setText("Pesquisar");
-		txtPesquisar.setBounds(115, 149, 732, 28);
+		txtPesquisar.setBounds(160, 173, 641, 28);
 		contentPane.add(txtPesquisar);
 		txtPesquisar.setColumns(10);
-		
-		JLabel lblBaixarRelatrio = new JLabel("Baixar Relat\u00F3rio");
-		lblBaixarRelatrio.setFont(new Font("SansSerif", Font.PLAIN, 22));
-		lblBaixarRelatrio.setBounds(117, 58, 300, 54);
-		contentPane.add(lblBaixarRelatrio);
 		
 		txtId = new JTextField();
 		txtId.setText("id");
 		txtId.setEditable(false);
 		txtId.setColumns(10);
 		txtId.setBackground(Color.WHITE);
-		txtId.setBounds(725, 109, 122, 28);
+		txtId.setBounds(813, 133, 122, 28);
 		contentPane.add(txtId);
 		
 		JButton button = new JButton("Voltar");
@@ -161,6 +162,11 @@ public class FrmBaixar extends JDialog {
 		button.setMnemonic('v');
 		button.setBounds(6, 6, 90, 28);
 		contentPane.add(button);
+		
+		JLabel lblNewLabel = new JLabel("New label");
+		lblNewLabel.setIcon(new ImageIcon(FrmBaixar.class.getResource("/img/baixar-relatorios.jpg")));
+		lblNewLabel.setBounds(6, 6, 982, 660);
+		contentPane.add(lblNewLabel);
 	}
 	
 	private void initialize() {

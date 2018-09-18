@@ -36,7 +36,7 @@ public class FrmMenuPrincipal extends JFrame {
 	private JMenu mnUsuario;
 	private JMenuItem mntmOriginal;
 	private JMenuItem mntmEnviados;
-	private JLabel labelImagem;
+	private JLabel label;
 
 	/**
 	 * Launch the application.
@@ -64,12 +64,6 @@ public class FrmMenuPrincipal extends JFrame {
 	 */
 	public FrmMenuPrincipal() {
 		setResizable(false);
-		addComponentListener(new ComponentAdapter() {
-			@Override
-			public void componentResized(ComponentEvent arg0) {
-				atualizarImagem();
-			}
-		});
 		addWindowListener(new WindowAdapter() {
 			@Override
 			public void windowOpened(WindowEvent e) {
@@ -135,11 +129,12 @@ public class FrmMenuPrincipal extends JFrame {
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
-		contentPane.setLayout(new GridLayout(0, 1, 0, 0));
+		contentPane.setLayout(null);
 		
-		labelImagem = new JLabel("");
-		labelImagem.setHorizontalAlignment(SwingConstants.CENTER);
-		contentPane.add(labelImagem);
+		label = new JLabel("");
+		label.setIcon(new ImageIcon(FrmMenuPrincipal.class.getResource("/img/menu.jpg")));
+		label.setBounds(6, 6, 982, 637);
+		contentPane.add(label);
 	}
 	
 	private void initialize() {
@@ -158,20 +153,7 @@ public class FrmMenuPrincipal extends JFrame {
 		}
 		temp();
 	}
-	
-	private void atualizarImagem() {
-		try {
-			ImageIcon ii = new ImageIcon(FrmMenuPrincipal.class.getResource("/img/20141219205334_660_420.jpg"));
-			Image i = ii.getImage();
-			Image i2 = i.getScaledInstance(labelImagem.getWidth(), labelImagem.getHeight(), Image.SCALE_DEFAULT);
-			ImageIcon ii2 = new ImageIcon(i2);
-			labelImagem.setIcon(ii2);
-		} catch (Exception e) {
-			// TODO Bloco catch gerado automaticamente
-			//e.printStackTrace();
-		}
-	}
-	
+		
 	private void temp() {
 		Thread t = new Thread() {
 			@Override

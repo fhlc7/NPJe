@@ -28,6 +28,8 @@ import javax.swing.border.EmptyBorder;
 import control.FHLC;
 import control.RelatorioOriginalControle;
 import model.RelatorioOriginal;
+import javax.swing.ImageIcon;
+import java.awt.SystemColor;
 
 public class FrmEnviarOriginal extends JDialog {
 
@@ -38,6 +40,7 @@ public class FrmEnviarOriginal extends JDialog {
 	private JTable tableRelatorio;
 	private JTextField txtPesquisar;
 	private JTextField txtId;
+	private final JLabel label_1 = new JLabel("New label");
 
 	/**
 	 * Launch the application.
@@ -81,11 +84,6 @@ public class FrmEnviarOriginal extends JDialog {
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		
-		JLabel lblEnviarRelatrioOriginal = new JLabel("Enviar Relat\u00F3rio Original");
-		lblEnviarRelatrioOriginal.setFont(new Font("SansSerif", Font.PLAIN, 22));
-		lblEnviarRelatrioOriginal.setBounds(161, 77, 459, 54);
-		contentPane.add(lblEnviarRelatrioOriginal);
-		
 		txtNomeDoArquivo = new JTextField();
 		txtNomeDoArquivo.setEditable(false);
 		txtNomeDoArquivo.setColumns(10);
@@ -94,7 +92,9 @@ public class FrmEnviarOriginal extends JDialog {
 		contentPane.add(txtNomeDoArquivo);
 		
 		JLabel label = new JLabel("Nome do Arquivo:");
-		label.setBounds(52, 134, 97, 16);
+		label.setFont(new Font("SansSerif", Font.BOLD, 12));
+		label.setForeground(SystemColor.text);
+		label.setBounds(52, 134, 107, 16);
 		contentPane.add(label);
 		
 		JButton btnEnviar = new JButton("Enviar");
@@ -148,8 +148,9 @@ public class FrmEnviarOriginal extends JDialog {
 		txtPesquisar.setColumns(10);
 		
 		JLabel lblPesquisar = new JLabel("Pesquisar:");
-		lblPesquisar.setFont(new Font("SansSerif", Font.PLAIN, 12));
-		lblPesquisar.setBounds(89, 174, 60, 16);
+		lblPesquisar.setForeground(SystemColor.text);
+		lblPesquisar.setFont(new Font("SansSerif", Font.BOLD, 12));
+		lblPesquisar.setBounds(52, 174, 107, 16);
 		contentPane.add(lblPesquisar);
 		
 		txtId = new JTextField();
@@ -189,6 +190,9 @@ public class FrmEnviarOriginal extends JDialog {
 		button.setMnemonic('v');
 		button.setBounds(6, 6, 90, 28);
 		contentPane.add(button);
+		label_1.setIcon(new ImageIcon(FrmEnviarOriginal.class.getResource("/img/disponibilizar-relatorios.jpg")));
+		label_1.setBounds(6, 6, 982, 660);
+		contentPane.add(label_1);
 	}
 	
 	private void initialize() {
@@ -295,5 +299,4 @@ public class FrmEnviarOriginal extends JDialog {
 		FHLC.baixarVisualizar(e.getNomeRelatorio(), e.getArquivoOutput());
 		initialize();
 	}
-	
 }

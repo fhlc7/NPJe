@@ -23,6 +23,8 @@ import javax.swing.border.EtchedBorder;
 
 import control.UsuarioControle;
 import model.Usuario;
+import javax.swing.ImageIcon;
+import java.awt.SystemColor;
 
 public class FrmLogin extends JFrame {
 
@@ -59,7 +61,7 @@ public class FrmLogin extends JFrame {
 		setResizable(false);
 		setTitle("Login");
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
-		setSize(282, 275);
+		setSize(1000, 700);
 		setLocationRelativeTo(null);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
@@ -67,14 +69,15 @@ public class FrmLogin extends JFrame {
 		contentPane.setLayout(null);
 		
 		JPanel panel = new JPanel();
+		panel.setForeground(SystemColor.activeCaptionBorder);
 		panel.setBorder(new EtchedBorder(EtchedBorder.LOWERED, null, null));
-		panel.setBounds(6, 49, 262, 116);
+		panel.setBounds(360, 287, 259, 229);
 		contentPane.add(panel);
 		panel.setLayout(null);
 		
 		JLabel lblUsuario = new JLabel("Usuario:");
 		lblUsuario.setHorizontalAlignment(SwingConstants.RIGHT);
-		lblUsuario.setBounds(31, 26, 55, 16);
+		lblUsuario.setBounds(31, 51, 55, 16);
 		panel.add(lblUsuario);
 		
 		txtUsuario = new JTextField();
@@ -84,13 +87,13 @@ public class FrmLogin extends JFrame {
 				tecladoFormulario(e);
 			}
 		});
-		txtUsuario.setBounds(98, 20, 122, 28);
+		txtUsuario.setBounds(98, 45, 122, 28);
 		panel.add(txtUsuario);
 		txtUsuario.setColumns(10);
 		
 		JLabel lblSenha = new JLabel("Senha:");
 		lblSenha.setHorizontalAlignment(SwingConstants.RIGHT);
-		lblSenha.setBounds(31, 66, 55, 16);
+		lblSenha.setBounds(31, 85, 55, 16);
 		panel.add(lblSenha);
 		
 		txtSenha = new JPasswordField();
@@ -100,26 +103,25 @@ public class FrmLogin extends JFrame {
 				tecladoFormulario(e);
 			}
 		});
-		txtSenha.setBounds(98, 60, 122, 28);
+		txtSenha.setBounds(98, 79, 122, 28);
 		panel.add(txtSenha);
 		
-		JLabel lblLogin = new JLabel("Login");
-		lblLogin.setHorizontalAlignment(SwingConstants.CENTER);
-		lblLogin.setForeground(Color.DARK_GRAY);
-		lblLogin.setFont(new Font("Calibri", Font.BOLD | Font.ITALIC, 25));
-		lblLogin.setBounds(6, 6, 262, 31);
-		contentPane.add(lblLogin);
-		
 		JButton btnEntrar = new JButton("Entrar");
-		btnEntrar.setBounds(105, 179, 122, 31);
-		contentPane.add(btnEntrar);
+		btnEntrar.setBackground(SystemColor.inactiveCaption);
+		btnEntrar.setBounds(42, 130, 180, 31);
+		panel.add(btnEntrar);
 		btnEntrar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				login();
 			}
 		});
-		btnEntrar.setFont(new Font("Calibri", Font.PLAIN, 22));
+		btnEntrar.setFont(new Font("Calibri", Font.PLAIN, 12));
 		btnEntrar.setMnemonic('e');
+		
+		JLabel lblNewLabel = new JLabel("New label");
+		lblNewLabel.setIcon(new ImageIcon(FrmLogin.class.getResource("/img/tela-login.jpg")));
+		lblNewLabel.setBounds(6, 6, 982, 643);
+		contentPane.add(lblNewLabel);
 	}
 
 	private void login() {
@@ -127,7 +129,7 @@ public class FrmLogin extends JFrame {
 		nomeUsuario = txtUsuario.getText().trim();
 		senha = new String(txtSenha.getPassword());
 		if(nomeUsuario.isEmpty()){
-			JOptionPane.showMessageDialog(null, "Digite o usuário");
+			JOptionPane.showMessageDialog(null, "Informe o usuário");
 			txtUsuario.requestFocus();
 			return;
 		}
@@ -141,7 +143,7 @@ public class FrmLogin extends JFrame {
 		usuario.setSenha(senha);
 		if(UsuarioControle.login(usuario)){
 			//existe
-			JOptionPane.showMessageDialog(null, "Seja Bem Vindo " + usuario.getUsuario());
+			JOptionPane.showMessageDialog(null, "Seja bem vindo " + usuario.getUsuario());
 			FrmMenuPrincipal menu = new FrmMenuPrincipal();
 			menu.setVisible(true);
 			limpar();
