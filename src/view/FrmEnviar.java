@@ -22,6 +22,8 @@ import control.FHLC;
 import control.RelatorioEnviadoControle;
 import control.UsuarioControle;
 import model.RelatorioEnviado;
+import javax.swing.ImageIcon;
+import java.awt.SystemColor;
 
 public class FrmEnviar extends JDialog {
 
@@ -70,11 +72,6 @@ public class FrmEnviar extends JDialog {
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		
-		JLabel lblEnviarRelatrio = new JLabel("Enviar Relat\u00F3rio");
-		lblEnviarRelatrio.setFont(new Font("SansSerif", Font.PLAIN, 22));
-		lblEnviarRelatrio.setBounds(161, 72, 301, 54);
-		contentPane.add(lblEnviarRelatrio);
-		
 		txtNomeDoArquivo = new JTextField();
 		txtNomeDoArquivo.setEditable(false);
 		txtNomeDoArquivo.setColumns(10);
@@ -83,7 +80,9 @@ public class FrmEnviar extends JDialog {
 		contentPane.add(txtNomeDoArquivo);
 		
 		JLabel label = new JLabel("Nome do Arquivo:");
-		label.setBounds(52, 134, 97, 16);
+		label.setFont(new Font("SansSerif", Font.BOLD, 12));
+		label.setForeground(SystemColor.text);
+		label.setBounds(52, 134, 99, 16);
 		contentPane.add(label);
 		
 		JButton btnEnviar = new JButton("Enviar");
@@ -103,7 +102,7 @@ public class FrmEnviar extends JDialog {
 			}
 		});
 		btnSelecionarArquivo.setMnemonic('s');
-		btnSelecionarArquivo.setBounds(660, 168, 130, 28);
+		btnSelecionarArquivo.setBounds(659, 168, 130, 28);
 		contentPane.add(btnSelecionarArquivo);
 		
 		JButton button = new JButton("Voltar");
@@ -113,8 +112,13 @@ public class FrmEnviar extends JDialog {
 			}
 		});
 		button.setMnemonic('v');
-		button.setBounds(6, 6, 90, 28);
+		button.setBounds(842, 602, 90, 28);
 		contentPane.add(button);
+		
+		JLabel lblNewLabel = new JLabel("New label");
+		lblNewLabel.setIcon(new ImageIcon(FrmEnviar.class.getResource("/img/enviar-relatorios.jpg")));
+		lblNewLabel.setBounds(6, 6, 982, 660);
+		contentPane.add(lblNewLabel);
 	}
 	
 	private void initialize() {
@@ -138,7 +142,7 @@ public class FrmEnviar extends JDialog {
 	
 	private void enviar() {
 		if (txtNomeDoArquivo.getText().isEmpty()) {
-			JOptionPane.showMessageDialog(null, "Nenhum relatório selecionado\n\nSelecione um Relatório");
+			JOptionPane.showMessageDialog(null, "Nenhum relatório selecionado\n\nSelecione um relatório");
 			initialize();
 			return;
 		}

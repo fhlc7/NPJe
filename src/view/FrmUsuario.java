@@ -36,6 +36,7 @@ import javax.swing.border.EtchedBorder;
 
 import control.UsuarioControle;
 import model.Usuario;
+import javax.swing.ImageIcon;
 
 public class FrmUsuario extends JFrame {
 
@@ -103,7 +104,7 @@ public class FrmUsuario extends JFrame {
 		
 		JPanel panel_1 = new JPanel();
 		panel_1.setBorder(new EtchedBorder(EtchedBorder.LOWERED, null, null));
-		panel_1.setBounds(6, 6, 938, 154);
+		panel_1.setBounds(6, 116, 938, 154);
 		panel.add(panel_1);
 		
 		JLabel lblCdigo = new JLabel("C\u00F3digo:");
@@ -192,7 +193,7 @@ public class FrmUsuario extends JFrame {
 		
 		JPanel panel_2 = new JPanel();
 		panel_2.setBorder(new EtchedBorder(EtchedBorder.LOWERED, null, null));
-		panel_2.setBounds(6, 172, 938, 363);
+		panel_2.setBounds(6, 271, 938, 272);
 		panel.add(panel_2);
 		
 		JScrollPane scrollPane = new JScrollPane();
@@ -303,6 +304,11 @@ public class FrmUsuario extends JFrame {
 		});
 		button_4.setMnemonic('f');
 		panel_3.add(button_4);
+		
+		JLabel lblNewLabel = new JLabel("New label");
+		lblNewLabel.setIcon(new ImageIcon(FrmUsuario.class.getResource("/img/cadastro-de-usuarios.jpg")));
+		lblNewLabel.setBounds(6, 6, 938, 613);
+		panel.add(lblNewLabel);
 	}
 	
 	private void atualizar(){
@@ -327,17 +333,17 @@ public class FrmUsuario extends JFrame {
 
 	private boolean verificar(){
 		if (txtUsuario.getText().trim().isEmpty()){
-			JOptionPane.showMessageDialog(null, "Digite o Usuário");
+			JOptionPane.showMessageDialog(null, "Digite o usuário");
 			txtUsuario.requestFocus();
 			return false;
 		}
 		if (String.valueOf(pwdSenha.getPassword()).isEmpty()){
-			JOptionPane.showMessageDialog(null, "Digite a Senha");
+			JOptionPane.showMessageDialog(null, "Digite a senha");
 			pwdSenha.requestFocus();
 			return false;
 		}
 		if (String.valueOf(pwdConfirmarSenha.getPassword()).isEmpty()){
-			JOptionPane.showMessageDialog(null, "Digite a Confirmação de Senha");
+			JOptionPane.showMessageDialog(null, "Digite a confirmação de Senha");
 			pwdConfirmarSenha.requestFocus();
 			return false;
 		}
@@ -349,22 +355,22 @@ public class FrmUsuario extends JFrame {
 			return false;
 		}
 		if (comboBoxTipo.getSelectedItem() == null) {
-			JOptionPane.showMessageDialog(null, "Escolha ou Digite o Tipo");
+			JOptionPane.showMessageDialog(null, "Escolha ou digite o tipo");
 			comboBoxTipo.requestFocus();
 			return false;
 		}
 		if (comboBoxTipo.getSelectedItem().toString().trim().isEmpty()) {
-			JOptionPane.showMessageDialog(null, "Escolha ou Digite o Tipo");
+			JOptionPane.showMessageDialog(null, "Escolha ou digite o tipo");
 			comboBoxTipo.requestFocus();
 			return false;
 		}
 		if (txtMatricula.getText().trim().isEmpty()){
-			JOptionPane.showMessageDialog(null, "Digite a Matrícula");
+			JOptionPane.showMessageDialog(null, "Digite a matrícula");
 			txtMatricula.requestFocus();
 			return false;
 		}
 		if (txtNomeCompleto.getText().trim().isEmpty()){
-			JOptionPane.showMessageDialog(null, "Digite o Nome Completo");
+			JOptionPane.showMessageDialog(null, "Digite o nome completo");
 			txtNomeCompleto.requestFocus();
 			return false;
 		}
@@ -440,12 +446,12 @@ public class FrmUsuario extends JFrame {
 	private void deletar() {
 		criarObjetoFormulario();
 		if (usuario.getId() != 0) {
-			if (JOptionPane.showConfirmDialog(null, "Você tem certeza que deseja deletar este usuário?", getTitle(), JOptionPane.YES_NO_OPTION) == JOptionPane.YES_OPTION) {
+			if (JOptionPane.showConfirmDialog(null, "Você tem certeza que deseja excluir este usuário?", getTitle(), JOptionPane.YES_NO_OPTION) == JOptionPane.YES_OPTION) {
 				UsuarioControle.deletar(usuario);
 				atualizar();
 			}
 		} else {
-			JOptionPane.showMessageDialog(null, "Selecione um usuário na tabela para deletar");
+			JOptionPane.showMessageDialog(null, "Selecione um usuário na tabela para excluir");
 		}
 	}
 	

@@ -107,7 +107,7 @@ public class FrmEnviarOriginal extends JDialog {
 		btnEnviar.setBounds(518, 168, 130, 28);
 		contentPane.add(btnEnviar);
 		
-		JButton btnSelecionarArquivo = new JButton("Selecionar Arquivo");
+		JButton btnSelecionarArquivo = new JButton("Selecionar arquivo");
 		btnSelecionarArquivo.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				selecionarArquivo();
@@ -188,7 +188,7 @@ public class FrmEnviarOriginal extends JDialog {
 			}
 		});
 		button.setMnemonic('v');
-		button.setBounds(6, 6, 90, 28);
+		button.setBounds(842, 608, 90, 28);
 		contentPane.add(button);
 		label_1.setIcon(new ImageIcon(FrmEnviarOriginal.class.getResource("/img/disponibilizar-relatorios.jpg")));
 		label_1.setBounds(6, 6, 982, 660);
@@ -220,7 +220,7 @@ public class FrmEnviarOriginal extends JDialog {
 	
 	private void enviar() {
 		if (txtNomeDoArquivo.getText().isEmpty() || !txtId.getText().isEmpty()) {
-			JOptionPane.showMessageDialog(null, "Nenhum relatório selecionado\n\nSelecione um Relatório");
+			JOptionPane.showMessageDialog(null, "Nenhum relatório selecionado\n\nSelecione um relatório");
 			initialize();
 			txtPesquisar.requestFocus();
 			return;
@@ -276,7 +276,7 @@ public class FrmEnviarOriginal extends JDialog {
 	
 	private void deletar() {
 		if (txtId.getText().isEmpty()) {
-			JOptionPane.showMessageDialog(null, "Nenhum relatório selecionado\n\nSelecione um Relatório");
+			JOptionPane.showMessageDialog(null, "Nenhum relatório selecionado\n\nSelecione um relatório");
 			initialize();
 			txtPesquisar.requestFocus();
 			return;
@@ -291,7 +291,7 @@ public class FrmEnviarOriginal extends JDialog {
 	
 	private void baixarVisualizar() {
 		if (txtId.getText().isEmpty()) {
-			JOptionPane.showMessageDialog(null, "Nenhum relatório selecionado\n\nSelecione um Relatório");
+			JOptionPane.showMessageDialog(null, "Nenhum relatório selecionado\n\nSelecione um relatório");
 			initialize();
 			txtPesquisar.requestFocus();
 			return;

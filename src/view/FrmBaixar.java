@@ -160,7 +160,7 @@ public class FrmBaixar extends JDialog {
 			}
 		});
 		button.setMnemonic('v');
-		button.setBounds(6, 6, 90, 28);
+		button.setBounds(845, 613, 90, 28);
 		contentPane.add(button);
 		
 		JLabel lblNewLabel = new JLabel("New label");
@@ -228,7 +228,7 @@ public class FrmBaixar extends JDialog {
 	
 	private void baixarVisualizar() {
 		if (txtId.getText().isEmpty()) {
-			JOptionPane.showMessageDialog(null, "Nenhum Relatório Selecionado");
+			JOptionPane.showMessageDialog(null, "Nenhum relatório selecionado");
 			initialize();
 			txtPesquisar.requestFocus();
 			return;

@@ -27,6 +27,8 @@ import javax.swing.border.EmptyBorder;
 import control.FHLC;
 import control.RelatorioEnviadoControle;
 import model.RelatorioEnviado;
+import javax.swing.ImageIcon;
+import java.awt.SystemColor;
 
 public class FrmRelatorioEnviado extends JDialog {
 
@@ -79,24 +81,23 @@ public class FrmRelatorioEnviado extends JDialog {
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		
-		JLabel lblRelatriosEnviados = new JLabel("Relat\u00F3rios Enviados");
-		lblRelatriosEnviados.setFont(new Font("SansSerif", Font.PLAIN, 22));
-		lblRelatriosEnviados.setBounds(115, 59, 429, 54);
-		contentPane.add(lblRelatriosEnviados);
-		
 		JLabel label = new JLabel("Nome do Arquivo:");
-		label.setBounds(6, 115, 97, 16);
+		label.setForeground(SystemColor.text);
+		label.setFont(new Font("SansSerif", Font.BOLD, 12));
+		label.setBounds(52, 135, 99, 16);
 		contentPane.add(label);
 		
 		txtNomeDoArquivo = new JTextField();
 		txtNomeDoArquivo.setEditable(false);
 		txtNomeDoArquivo.setColumns(10);
 		txtNomeDoArquivo.setBackground(Color.WHITE);
-		txtNomeDoArquivo.setBounds(115, 109, 732, 28);
+		txtNomeDoArquivo.setBounds(163, 129, 630, 28);
 		contentPane.add(txtNomeDoArquivo);
 		
 		JLabel label_1 = new JLabel("Pesquisar:");
-		label_1.setBounds(43, 155, 60, 16);
+		label_1.setForeground(SystemColor.text);
+		label_1.setFont(new Font("SansSerif", Font.BOLD, 12));
+		label_1.setBounds(54, 175, 97, 16);
 		contentPane.add(label_1);
 		
 		txtPesquisar = new JTextField();
@@ -107,7 +108,7 @@ public class FrmRelatorioEnviado extends JDialog {
 			}
 		});
 		txtPesquisar.setColumns(10);
-		txtPesquisar.setBounds(115, 149, 732, 28);
+		txtPesquisar.setBounds(161, 169, 632, 28);
 		contentPane.add(txtPesquisar);
 		
 		JButton btnBaixarVisualizar = new JButton("Baixar/Visualizar");
@@ -117,11 +118,11 @@ public class FrmRelatorioEnviado extends JDialog {
 			}
 		});
 		btnBaixarVisualizar.setMnemonic('b');
-		btnBaixarVisualizar.setBounds(859, 149, 129, 28);
+		btnBaixarVisualizar.setBounds(805, 169, 129, 28);
 		contentPane.add(btnBaixarVisualizar);
 		
 		JScrollPane scrollPaneRelatorio = new JScrollPane();
-		scrollPaneRelatorio.setBounds(6, 189, 982, 477);
+		scrollPaneRelatorio.setBounds(54, 204, 880, 388);
 		contentPane.add(scrollPaneRelatorio);
 		
 		tableRelatorio = new JTable();
@@ -146,8 +147,13 @@ public class FrmRelatorioEnviado extends JDialog {
 			}
 		});
 		btnVoltar.setMnemonic('v');
-		btnVoltar.setBounds(6, 6, 90, 28);
+		btnVoltar.setBounds(844, 604, 90, 28);
 		contentPane.add(btnVoltar);
+		
+		JLabel lblNewLabel = new JLabel("New label");
+		lblNewLabel.setIcon(new ImageIcon(FrmRelatorioEnviado.class.getResource("/img/relatorios-enviados.jpg")));
+		lblNewLabel.setBounds(6, 6, 982, 660);
+		contentPane.add(lblNewLabel);
 	}
 	
 	private void initialize() {
@@ -225,7 +231,7 @@ public class FrmRelatorioEnviado extends JDialog {
 	
 	private void baixarVisualizar() {
 		if (txtNomeDoArquivo.getText().isEmpty()) {
-			JOptionPane.showMessageDialog(null, "Nenhum relatório selecionado\n\nSelecione um Relatório");
+			JOptionPane.showMessageDialog(null, "Nenhum relatório selecionado\n\nSelecione um relatório");
 			initialize();
 			txtPesquisar.requestFocus();
 			return;
