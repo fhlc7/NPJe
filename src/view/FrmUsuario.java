@@ -80,6 +80,7 @@ public class FrmUsuario extends JFrame {
 	 * Create the frame.
 	 */
 	public FrmUsuario() {
+		setResizable(false);
 		addWindowListener(new WindowAdapter() {
 			@Override
 			public void windowOpened(WindowEvent arg0) {
@@ -256,7 +257,7 @@ public class FrmUsuario extends JFrame {
 		
 		JPanel panel_3 = new JPanel();
 		panel_3.setBorder(new EtchedBorder(EtchedBorder.LOWERED, null, null));
-		panel_3.setBounds(6, 541, 938, 78);
+		panel_3.setBounds(92, 565, 374, 32);
 		panel.add(panel_3);
 		panel_3.setLayout(new GridLayout(0, 5, 0, 0));
 		

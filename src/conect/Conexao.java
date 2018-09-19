@@ -14,8 +14,8 @@ public class Conexao {
 	public static Connection conectar() {
 		try {
 			//conexao = DriverManager.getConnection("jdbc:sqlite:dbCompumaster.s3db");
-			//conexao = DriverManager.getConnection("jdbc:mysql://localhost/banco_de_renato", "root", "");
-			conexao = DriverManager.getConnection("jdbc:mysql://" + InetAddress.getByName("DESKTOP-55DUIF2").getHostAddress() + "/banco_de_renato", "cometa", "calango");
+			conexao = DriverManager.getConnection("jdbc:mysql://localhost/banco_de_renato", "root", "");
+			//conexao = DriverManager.getConnection("jdbc:mysql://" + InetAddress.getByName("DESKTOP-55DUIF2").getHostAddress() + "/banco_de_renato", "cometa", "calango");
 			//conexao = DriverManager.getConnection("jdbc:mysql://192.168.1.2/Compumaster", "fhlc", "fhlc123");
 			conexao.setAutoCommit(false);
 			System.out.println("Conectado com sucesso");
