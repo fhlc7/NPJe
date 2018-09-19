@@ -15,12 +15,15 @@ import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
+import java.text.ParseException;
+import java.util.logging.SimpleFormatter;
 
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.GroupLayout;
 import javax.swing.GroupLayout.Alignment;
 import javax.swing.JButton;
 import javax.swing.JComboBox;
+import javax.swing.JFormattedTextField;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
@@ -33,6 +36,7 @@ import javax.swing.LayoutStyle.ComponentPlacement;
 import javax.swing.UIManager;
 import javax.swing.border.EmptyBorder;
 import javax.swing.border.EtchedBorder;
+import javax.swing.text.MaskFormatter;
 
 import control.UsuarioControle;
 import model.Usuario;
@@ -187,7 +191,12 @@ public class FrmUsuario extends JFrame {
 		lblFone.setBounds(535, 113, 31, 16);
 		panel_1.add(lblFone);
 		
-		txtFone = new JTextField();
+		try {
+			txtFone = new JFormattedTextField(new MaskFormatter("(##) ####-####"));
+		} catch (ParseException e1) {
+			// TODO Bloco catch gerado automaticamente
+			e1.printStackTrace();
+		}
 		txtFone.setBounds(578, 107, 307, 28);
 		panel_1.add(txtFone);
 		txtFone.setColumns(10);
