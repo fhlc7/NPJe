@@ -29,6 +29,10 @@ import control.RelatorioEnviadoControle;
 import model.RelatorioEnviado;
 import javax.swing.ImageIcon;
 import java.awt.SystemColor;
+import javax.swing.JPopupMenu;
+import javax.swing.JMenuItem;
+import java.awt.Component;
+import javax.swing.KeyStroke;
 
 public class FrmRelatorioEnviado extends JDialog {
 
@@ -189,15 +193,20 @@ public class FrmRelatorioEnviado extends JDialog {
 		criarObjetoTabela();
 		deObjetoParaFormulario();
 		if (event.getClickCount() > 1) {
-			JOptionPane.showMessageDialog(null, "id: " + e.getId() + "\n\n"
-												+ "Nome do Arquivo: " + e.getNomeArquivo() + "\n\n"
-												+ "ID Usuário: " + e.getUsuario().getId() + "\n\n"
-												+ "Usuário: " + e.getUsuario().getUsuario() + "\n\n"
-												+ "Tipo: " + e.getUsuario().getTipo() + "\n\n"
-												+ "Matrícula: " + e.getUsuario().getMatricula() + "\n\n"
-												+ "Nome Completo: " + e.getUsuario().getNomeCompleto() + "\n\n"
-												+ "E-mail: " + e.getUsuario().getEmail() + "\n\n"
-												+ "Fone: " + e.getUsuario().getFone());
+			if(JOptionPane.showConfirmDialog(null, "Você tem certeza que deseja deletar este relatório enviado\n\n\n\n"
+										+ "id: " + e.getId() + "\n\n"
+										+ "Nome do Arquivo: " + e.getNomeArquivo() + "\n\n"
+										+ "ID Usuário: " + e.getUsuario().getId() + "\n\n"
+										+ "Usuário: " + e.getUsuario().getUsuario() + "\n\n"
+										+ "Tipo: " + e.getUsuario().getTipo() + "\n\n"
+										+ "Matrícula: " + e.getUsuario().getMatricula() + "\n\n"
+										+ "Nome Completo: " + e.getUsuario().getNomeCompleto() + "\n\n"
+										+ "E-mail: " + e.getUsuario().getEmail() + "\n\n"
+										+ "Fone: " + e.getUsuario().getFone(),
+										getTitle(), JOptionPane.YES_NO_OPTION) == JOptionPane.YES_OPTION){
+											RelatorioEnviadoControle.deletar(e);
+											atualizarTabela();
+										}
 		}
 	}
 	
@@ -238,5 +247,7 @@ public class FrmRelatorioEnviado extends JDialog {
 		}
 		FHLC.baixarVisualizar(e.getNomeArquivo(), e.getArquivoOutput());
 		initialize();
+	}
+	private static void addPopup(Component component, final JPopupMenu popup) {
 	}
 }

@@ -32,7 +32,6 @@ public class RelatorioEnviadoControle {
 		DefaultTableModel defaultTableModel = new DefaultTableModel(null, new Object[] {
 				"id",
 				"Nome do Arquivo",
-				"ID Usuário",
 				"Usuário",
 				"Tipo",
 				"Matrícula",
@@ -52,7 +51,6 @@ public class RelatorioEnviadoControle {
 				defaultTableModel.addRow(new Object[] {
 					e.getId(),
 					e.getNomeArquivo(),
-					e.getUsuario().getId(),
 					e.getUsuario().getUsuario(),
 					e.getUsuario().getTipo(),
 					e.getUsuario().getMatricula(),
