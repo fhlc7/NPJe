@@ -7,3 +7,4 @@ MySQL;
 MySQL Workbench 6.3 CE;
 WampServer;
 phpMyAdmin;
+Modelo MVC;

@@ -109,44 +109,44 @@ public class FrmUsuario extends JFrame {
 		
 		JPanel panel_1 = new JPanel();
 		panel_1.setBorder(new EtchedBorder(EtchedBorder.LOWERED, null, null));
-		panel_1.setBounds(6, 116, 938, 154);
+		panel_1.setBounds(6, 127, 938, 211);
 		panel.add(panel_1);
 		
 		JLabel lblCdigo = new JLabel("C\u00F3digo:");
-		lblCdigo.setBounds(55, 12, 43, 16);
+		lblCdigo.setBounds(17, 51, 43, 16);
 		
 		txtId = new JTextField();
-		txtId.setBounds(108, 6, 122, 28);
+		txtId.setBounds(70, 45, 74, 28);
 		txtId.setBackground(Color.WHITE);
 		txtId.setEditable(false);
 		txtId.setColumns(10);
 		
 		JLabel lblUsuario = new JLabel("Usu\u00E1rio:");
-		lblUsuario.setBounds(55, 46, 47, 16);
+		lblUsuario.setBounds(17, 85, 47, 16);
 		
 		txtUsuario = new JTextField();
-		txtUsuario.setBounds(108, 40, 352, 28);
+		txtUsuario.setBounds(70, 79, 352, 28);
 		txtUsuario.setColumns(10);
 		
 		JLabel lblSenha = new JLabel("Senha:");
-		lblSenha.setBounds(55, 80, 39, 16);
+		lblSenha.setBounds(17, 119, 39, 16);
 		
 		pwdSenha = new JPasswordField();
-		pwdSenha.setBounds(108, 74, 122, 28);
+		pwdSenha.setBounds(70, 113, 122, 28);
 		pwdSenha.setText("Senha");
 		
 		JLabel lblConfirmarSenha = new JLabel("Confirmar senha:");
-		lblConfirmarSenha.setBounds(236, 80, 96, 16);
+		lblConfirmarSenha.setBounds(198, 119, 96, 16);
 		
 		pwdConfirmarSenha = new JPasswordField();
-		pwdConfirmarSenha.setBounds(338, 74, 122, 28);
+		pwdConfirmarSenha.setBounds(300, 113, 122, 28);
 		pwdConfirmarSenha.setText("Confirmar senha");
 		
 		JLabel lblTipo = new JLabel("Tipo:");
-		lblTipo.setBounds(55, 113, 27, 16);
+		lblTipo.setBounds(17, 152, 27, 16);
 		
 		comboBoxTipo = new JComboBox();
-		comboBoxTipo.setBounds(108, 108, 352, 26);
+		comboBoxTipo.setBounds(70, 147, 352, 26);
 		comboBoxTipo.setModel(new DefaultComboBoxModel(new String[] {"Coordenador", "Preceptor", "Estagi\u00E1rio"}));
 		panel_1.setLayout(null);
 		panel_1.add(lblCdigo);
@@ -161,34 +161,34 @@ public class FrmUsuario extends JFrame {
 		panel_1.add(txtUsuario);
 		
 		JLabel lblNomeCompleto = new JLabel("Nome Completo:");
-		lblNomeCompleto.setBounds(472, 46, 94, 16);
+		lblNomeCompleto.setBounds(453, 85, 94, 16);
 		panel_1.add(lblNomeCompleto);
 		
 		txtNomeCompleto = new JTextField();
-		txtNomeCompleto.setBounds(578, 40, 307, 28);
+		txtNomeCompleto.setBounds(559, 84, 370, 28);
 		panel_1.add(txtNomeCompleto);
 		txtNomeCompleto.setColumns(10);
 		
 		JLabel lblMatrcula = new JLabel("Matr\u00EDcula:");
-		lblMatrcula.setBounds(514, 12, 52, 16);
+		lblMatrcula.setBounds(495, 51, 52, 16);
 		panel_1.add(lblMatrcula);
 		
 		txtMatricula = new JTextField();
-		txtMatricula.setBounds(578, 6, 307, 28);
+		txtMatricula.setBounds(559, 50, 370, 28);
 		panel_1.add(txtMatricula);
 		txtMatricula.setColumns(10);
 		
 		JLabel lblEmail = new JLabel("E-mail:");
-		lblEmail.setBounds(527, 80, 39, 16);
+		lblEmail.setBounds(508, 119, 39, 16);
 		panel_1.add(lblEmail);
 		
 		txtEmail = new JTextField();
-		txtEmail.setBounds(578, 74, 307, 28);
+		txtEmail.setBounds(559, 118, 370, 28);
 		panel_1.add(txtEmail);
 		txtEmail.setColumns(10);
 		
 		JLabel lblFone = new JLabel("Fone:");
-		lblFone.setBounds(535, 113, 31, 16);
+		lblFone.setBounds(516, 152, 31, 16);
 		panel_1.add(lblFone);
 		
 		try {
@@ -197,13 +197,63 @@ public class FrmUsuario extends JFrame {
 			// TODO Bloco catch gerado automaticamente
 			e1.printStackTrace();
 		}
-		txtFone.setBounds(578, 107, 307, 28);
+		txtFone.setBounds(559, 151, 370, 28);
 		panel_1.add(txtFone);
 		txtFone.setColumns(10);
 		
+		JButton button = new JButton("Atualizar");
+		button.setBounds(17, 6, 130, 28);
+		panel_1.add(button);
+		button.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				atualizar();
+			}
+		});
+		button.setMnemonic('a');
+		
+		JButton button_1 = new JButton("Novo");
+		button_1.setBounds(147, 6, 130, 28);
+		panel_1.add(button_1);
+		button_1.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				novo();
+			}
+		});
+		button_1.setMnemonic('n');
+		
+		JButton button_2 = new JButton("Salvar");
+		button_2.setBounds(277, 6, 130, 28);
+		panel_1.add(button_2);
+		button_2.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				salvar();
+			}
+		});
+		button_2.setMnemonic('s');
+		
+		JButton btnExcluir = new JButton("Excluir");
+		btnExcluir.setBounds(407, 6, 130, 28);
+		panel_1.add(btnExcluir);
+		btnExcluir.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				deletar();
+			}
+		});
+		btnExcluir.setMnemonic('d');
+		
+		JButton button_4 = new JButton("Voltar");
+		button_4.setBounds(799, 6, 130, 28);
+		panel_1.add(button_4);
+		button_4.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				dispose();
+			}
+		});
+		button_4.setMnemonic('f');
+		
 		JPanel panel_2 = new JPanel();
 		panel_2.setBorder(new EtchedBorder(EtchedBorder.LOWERED, null, null));
-		panel_2.setBounds(6, 271, 938, 272);
+		panel_2.setBounds(6, 337, 938, 282);
 		panel.add(panel_2);
 		
 		JScrollPane scrollPane = new JScrollPane();
@@ -224,20 +274,18 @@ public class FrmUsuario extends JFrame {
 		GroupLayout gl_panel_2 = new GroupLayout(panel_2);
 		gl_panel_2.setHorizontalGroup(
 			gl_panel_2.createParallelGroup(Alignment.TRAILING)
-				.addGap(0, 972, Short.MAX_VALUE)
 				.addGroup(gl_panel_2.createSequentialGroup()
 					.addContainerGap()
 					.addGroup(gl_panel_2.createParallelGroup(Alignment.TRAILING)
-						.addComponent(scrollPane, Alignment.LEADING, GroupLayout.DEFAULT_SIZE, 956, Short.MAX_VALUE)
-						.addGroup(gl_panel_2.createSequentialGroup()
+						.addComponent(scrollPane, Alignment.LEADING, GroupLayout.DEFAULT_SIZE, 922, Short.MAX_VALUE)
+						.addGroup(Alignment.LEADING, gl_panel_2.createSequentialGroup()
 							.addComponent(label)
 							.addPreferredGap(ComponentPlacement.RELATED)
-							.addComponent(txtProcurar, GroupLayout.DEFAULT_SIZE, 895, Short.MAX_VALUE)))
+							.addComponent(txtProcurar, GroupLayout.DEFAULT_SIZE, 861, Short.MAX_VALUE)))
 					.addContainerGap())
 		);
 		gl_panel_2.setVerticalGroup(
 			gl_panel_2.createParallelGroup(Alignment.LEADING)
-				.addGap(0, 282, Short.MAX_VALUE)
 				.addGroup(gl_panel_2.createSequentialGroup()
 					.addContainerGap()
 					.addGroup(gl_panel_2.createParallelGroup(Alignment.BASELINE)
@@ -263,57 +311,6 @@ public class FrmUsuario extends JFrame {
 		});
 		scrollPane.setViewportView(table);
 		panel_2.setLayout(gl_panel_2);
-		
-		JPanel panel_3 = new JPanel();
-		panel_3.setBorder(new EtchedBorder(EtchedBorder.LOWERED, null, null));
-		panel_3.setBounds(92, 565, 374, 32);
-		panel.add(panel_3);
-		panel_3.setLayout(new GridLayout(0, 5, 0, 0));
-		
-		JButton button = new JButton("Atualizar");
-		button.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent arg0) {
-				atualizar();
-			}
-		});
-		button.setMnemonic('a');
-		panel_3.add(button);
-		
-		JButton button_1 = new JButton("Novo");
-		button_1.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				novo();
-			}
-		});
-		button_1.setMnemonic('n');
-		panel_3.add(button_1);
-		
-		JButton button_2 = new JButton("Salvar");
-		button_2.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				salvar();
-			}
-		});
-		button_2.setMnemonic('s');
-		panel_3.add(button_2);
-		
-		JButton btnExcluir = new JButton("Excluir");
-		btnExcluir.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				deletar();
-			}
-		});
-		btnExcluir.setMnemonic('d');
-		panel_3.add(btnExcluir);
-		
-		JButton button_4 = new JButton("Fechar");
-		button_4.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent arg0) {
-				dispose();
-			}
-		});
-		button_4.setMnemonic('f');
-		panel_3.add(button_4);
 		
 		JLabel lblNewLabel = new JLabel("New label");
 		lblNewLabel.setIcon(new ImageIcon(FrmUsuario.class.getResource("/img/cadastro-de-usuarios.jpg")));
